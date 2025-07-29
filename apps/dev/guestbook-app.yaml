@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: guestbook-dev
-  namespace: multi-app
+  namespace: guestbook-dev
 spec:
   project: default
   source:
@@ -11,7 +11,7 @@ spec:
     path: environments/dev
   destination:
     server: https://kubernetes.default.svc
-    namespace: multi-app
+    namespace: guestbook-dev
   syncPolicy:
     automated:
       prune: true
